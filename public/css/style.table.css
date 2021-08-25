@@ -1,0 +1,17 @@
+#costosdirectos{
+    float: left;
+    width: 50%;
+}
+#gastosadministrativos{
+    float: right;
+    width: 50%;
+}
+
+#recursos{
+    float: left;
+    width: 50%;
+}
+#costos{
+    float: right;
+    width: 50%;
+}

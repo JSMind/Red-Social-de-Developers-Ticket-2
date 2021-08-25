@@ -1,0 +1,33 @@
+{
+  "name": "ticket2",
+  "version": "1.0.0",
+  "description": "Este proyecto contendra una red social para Tecla",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": " nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JSMind/ticket2.git"
+  },
+  "author": "Jair Serralde",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JSMind/ticket2/issues"
+  },
+  "homepage": "https://github.com/JSMind/ticket2#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-rate-limit": "^5.3.0",
+    "joi": "^17.4.2",
+    "jsonwebtoken": "^8.5.1",
+    "nodemon": "^2.0.12",
+    "sequelize": "^6.6.5",
+    "tedious": "^11.4.0"
+  }
+}
