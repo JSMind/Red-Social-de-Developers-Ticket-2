@@ -1,7 +1,7 @@
 // Importar los modulos necesarios
 const {DataTypes, Model} = require('sequelize');
 const sequelize = require('./db.conection');
-const Permisos = require('./db.modelo.permisos');
+const Permisos = require('./db.modelo.usuario_permisos');
 
 //Datos que contendra la tabla Usuarios
 const Usuarios = sequelize.define('Usuarios',{

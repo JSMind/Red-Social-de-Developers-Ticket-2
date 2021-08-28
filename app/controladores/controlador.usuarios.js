@@ -77,6 +77,99 @@ let verificarUsuario = async(token) =>{                             //Controlado
     }
 }
 
+let crearPerfil = async (perfil) => {                                  //Controlador que conecta con el metodo crearUsuarios para la creacion de un Usuario
+    try {
+        let nuevoPerfil = await modeloUsuarios.crearPerfil(perfil)
+        return nuevoPerfil;
+    } catch (error) {
+        console.log(error);
+        throw new Error(error.message);
+    }
+}
+
+let obtenerPerfil = async (id_usuario) => {                                  //Controlador que conecta con el metodo crearUsuarios para la creacion de un Usuario
+    try {
+        let consultaPerfil = await modeloUsuarios.obtenerPerfil(id_usuario)
+        return consultaPerfil;
+    } catch (error) {
+        console.log(error);
+        throw new Error(error.message);
+    }
+}
+
+let actualizarPerfil = async (perfil) => {                                  //Controlador que conecta con el metodo crearUsuarios para la creacion de un Usuario
+    try {
+    let perfilactualizado = await modeloUsuarios.actualizarPerfil(perfil)
+        return perfilactualizado;
+    } catch (error) {
+        console.log(error);
+        throw new Error(error.message);
+    }
+}
 
 
-module.exports = { listarUsuarios, crearUsuario, eliminarUsuario, inspeccionarUsuario, generarToken, verificarUsuario }
+let crearCalificacion = async (usuario_calificacion) => {                                  //Controlador 
+    try {
+    let perfilactualizado = await modeloUsuarios.crearCalificacion(usuario_calificacion)
+        return perfilactualizado;
+    } catch (error) {
+        console.log(error);
+        throw new Error(error.message);
+    }
+}
+
+
+let obtenerCalificaciones = async (id_usuario) => {                                  //Controlador que conecta con el metodo crearUsuarios para la creacion de un Usuario
+    try {
+        let calificaciones = await modeloUsuarios.obtenerCalificaciones(id_usuario)
+        return calificaciones;
+    } catch (error) {
+        console.log(error);
+        throw new Error(error.message);
+    }
+}
+
+let actualizarCalificacion = async (usuario_calificacion_actualizada) => {                                  //Controlador 
+    try {
+    let respuesta = await modeloUsuarios.actualizarCalificacion(usuario_calificacion_actualizada)
+        return respuesta;
+    } catch (error) {
+        console.log(error);
+        throw new Error(error.message);
+    }
+}
+
+let crearSolicitudAmistad = async (solicitud_amistad) => {                                  //Controlador 
+    try {
+    let respuesta = await modeloUsuarios.crearSolicitudAmistad(solicitud_amistad)
+        return respuesta;
+    } catch (error) {
+        console.log(error);
+        throw new Error(error.message);
+    }
+}
+
+let obtenerSolicitudesAmistades = async (id_usuario) => {                                  //Controlador 
+    try {
+    let solicitudes_amistades = await modeloUsuarios.obtenerSolicitudesAmistades(id_usuario)
+        return solicitudes_amistades;
+    } catch (error) {
+        console.log(error);
+        throw new Error(error.message);
+    }
+}
+
+let eliminarSolicitudAmistad = async (solicitud_amistad) => {                                  //Controlador 
+    try {
+    let respuesta = await modeloUsuarios.eliminarSolicitudAmistad(solicitud_amistad)
+        return respuesta;
+    } catch (error) {
+        console.log(error);
+        throw new Error(error.message);
+    }
+}
+
+
+
+
+module.exports = { listarUsuarios, crearUsuario, eliminarUsuario, inspeccionarUsuario, generarToken, verificarUsuario, crearPerfil, obtenerPerfil, actualizarPerfil, crearCalificacion, actualizarCalificacion, obtenerCalificaciones, crearSolicitudAmistad, eliminarSolicitudAmistad, obtenerSolicitudesAmistades }

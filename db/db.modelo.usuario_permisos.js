@@ -4,7 +4,7 @@ const sequelize = require('./db.conection')
 
 // Datos que contendra la tabla Permisos , para definir el usuario tipo administrador y usario normal
 
-const Permisos = sequelize.define('Permisos' , {
+const Usuario_Permisos = sequelize.define('Usuario_Permisos' , {
     tipo_usuario: {
         autoIncrement: true,
         type: DataTypes.INTEGER,
@@ -21,4 +21,4 @@ const Permisos = sequelize.define('Permisos' , {
 })
 
 
-module.exports = Permisos
+module.exports = Usuario_Permisos
