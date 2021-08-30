@@ -27,24 +27,51 @@
                     </ul>    
                 </nav>
             </header>
-            <div>
-                <ul id="listausuarios">
-                </ul>
+
+            <div class="container">
+                <h1 class="text-center">TECLA RED SOCIAL</h1>
+                <hr>
+                <div class="row" id="items"> </div>
             </div>
-            <template id="templateperfil">
-               <ul>
-                    <div class="col-12 mb-2">
-                        <div class="card" style="width: 12rem; background-color: #0ca6ac59;">
-                            <img src="" alt=""   class="card-img-top"> 
-                                <div class="card-body">
-                                    <h5>Titulo</h5>
-                                    <p>precio</p>
-                                    <button class="btn-producto btn-dark">Comprar</button>
-                                </div>
+              <!-- Template que se utiliza para generar  el  DOM de la pagina mostrando los productos -->
+            <template id="template-card">
+                <ul>
+                <div class="col-12 mb-2">
+                  <div class="card" style="width: 12rem; background-color: #0ca6ac59;">
+                    
+                        <img src="" alt=""   class="card-img-top"> 
+                        <div class="card-body">
+                            <p><b>NOMBRE: </b> <span class="texto"> nombre</span> </p>
+                            <br>
+                            <p><b>PERFIL </b> </p>
+                            <p><b>EDAD: </b> <span class="texto"> edad</span> </p>
+                            <p><b>PAIS: </b> <span class="texto"> pais</span> </p>
+                            <p><b>CIUDAD: </b> <span class="texto"> ciudad</span> </p>
+                            <p><b>ESTUDIOS </b> <span class="texto"> estudios</span> </p>
+                            <p><b>LINKEDIN </b> <span class="texto">  linkedin</span> </p>
+                            <p><b>IDIOMAS </b> <span class="texto"> idiomas</span> </p>
+                            <p><b>HOBBIES </b> <span class="texto"> hobbies</span> </p>
+
+                            
+
+
+
+
+
+                            <!-- <ul>
+                                <h5>Edad</h5>
+                                <h5>Nombre:</h5>
+                                <h5>Nombre:</h5>
+
+
+
+                            </ul> -->
+
                         </div>
-                    </div>
+                  </div>
+                </div>
               </ul>
-            </template>
+              </template> 
 
 
             

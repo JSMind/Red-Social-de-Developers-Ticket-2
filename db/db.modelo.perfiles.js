@@ -15,7 +15,7 @@ const Perfiles = sequelize.define('Perfiles',{
         allowNull: false
     },
     foto_perfil:{
-        type: DataTypes.STRING(150),
+        type: DataTypes.STRING(700),
         allowNull: false
     },
     ciudad:{
@@ -39,7 +39,7 @@ const Perfiles = sequelize.define('Perfiles',{
         allowNull: false
     },
     linkedin:{
-        type: DataTypes.STRING(300),
+        type: DataTypes.STRING(500),
         allowNull: false
     },
     hobbies:{
