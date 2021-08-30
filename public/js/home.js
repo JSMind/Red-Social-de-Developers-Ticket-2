@@ -1,21 +1,23 @@
-  //Modificando el estado de Sesion en el DOM
-// function estadoSesion(){
-//   var estadoSesion = document.querySelector('.login');
-//   if(localStorage.getItem('token')){ 
-//       tokenSesion= localStorage.getItem('token')   
-//       if( tokenSesion !== "undefined"){
-//           estadoSesion.textContent = "SIGN OFF"
-//       }
-//   }
-// };
-
-// estadoSesion();
-
+ 
 const cerrarsession = document.querySelector('.signoff')
 
 cerrarsession.addEventListener('click', ()=>{
 
         localStorage.removeItem('token');
-        estadoSesion();
+        localStorage.removeItem('id_usuario');
+  
 
   })
+
+//Obteniendo el perfil acorde al el usuario que haya iniciado sesion
+const id_usuario = localStorage.getItem('id_usuario')
+obtenerPerfil(id_usuario);
+obtenerCalificaciones(id_usuario)
+obtenerAmigos(id_usuario)
+obtenerComentarios(id_usuario)
+
+
+
+
+
+

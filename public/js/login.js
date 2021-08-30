@@ -15,6 +15,8 @@ btnLogin.addEventListener('submit', async(e) =>{
         if(iniciarSesion.validacion){
             usuario.token = iniciarSesion.validacion;
             localStorage.setItem('token', JSON.stringify(usuario.token))
+            usuario.id_usuario = iniciarSesion.id_usuario
+            localStorage.setItem('id_usuario', JSON.stringify(usuario.id_usuario))
             window.location.href = "http://localhost:3000/home"
         }else{
             alert(`Error: ${iniciarSesion.message}`)

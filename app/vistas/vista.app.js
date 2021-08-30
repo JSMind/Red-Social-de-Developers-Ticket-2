@@ -1,5 +1,4 @@
-// Importación de modulos necesarios a utilizar
-const midd = require('../../middelwares/midd.usuarios')
+
 
 
 // Exportar los modulos

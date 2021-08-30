@@ -7,6 +7,7 @@ const sequelize = require('./db/db.conection')
 
 const Usuarios = require('./db/db.modelo.usuarios');
 const Usuario_Permisos = require('./db/db.modelo.usuario_permisos');
+const Usuario_Comentarios = require('./db/db.modelo.usuario_comentarios');
 const Usuario_Solicitudes_Amistades = require('./db/db.modelo.usuario_solicitudes_amistades');
 const Usuario_Amigos = require('./db/db.modelo.usuario_amigos');
 const Perfiles = require('./db/db.modelo.perfiles');
@@ -36,6 +37,7 @@ async function iniciarServidor() {
     try {
         await Usuario_Permisos.sync({ alter: true });   
         await Usuarios.sync({ alter: true });
+        await Usuario_Comentarios.sync({ alter: true });
         await Usuario_Solicitudes_Amistades.sync({ alter: true });
         await Usuario_Amigos.sync({ alter: true });
         await Perfiles.sync({ alter: true });

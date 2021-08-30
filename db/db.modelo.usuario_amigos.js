@@ -1,6 +1,7 @@
 // Importar los modulos necesarios
 const {DataTypes, Model} = require('sequelize');
 const sequelize = require('./db.conection');
+const Perfiles = require('./db.modelo.perfiles');
 const Usuarios = require('./db.modelo.usuarios');
 
 //Datos que contendra la tabla Usuarios
@@ -19,7 +20,7 @@ const Usuario_Amigos = sequelize.define('Usuario_Amigos',{
     updatedAt: 'fecha_actualizacion'
 });
 
-Usuario_Amigos.belongsTo(Usuarios,{foreignKey: 'id_usuario'}); //Especificacion de foreignKey que asociara la tabla Usuarios con la Tabla Permisos
-Usuario_Amigos.belongsTo(Usuarios,{foreignKey: 'id_amigo'});
+Usuario_Amigos.belongsTo(Perfiles,{foreignKey: 'id_usuario'}); //Especificacion de foreignKey que asociara la tabla Usuarios con la Tabla Permisos
+Usuario_Amigos.belongsTo(Perfiles,{foreignKey: 'id_amigo'});
 // Exportar el modelo
 module.exports = Usuario_Amigos

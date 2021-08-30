@@ -4,9 +4,9 @@ const bcrypt = require('bcrypt');
 const modeloUsuarios = require('../modelos/modelo.usuarios');
 
 // Exportar los modulos
-let listarUsuarios = async () => {                                      //Controlador que conecta con el metodo consultaUSuarios para listar todos los usuarios
+let obtenerIdusuario = async (usuario) => {                                      //Controlador que conecta con el metodo consultaUSuarios para listar todos los usuarios
     try {
-        let consultaUsuarios = await modeloUsuarios.consultaUsuarios();
+        let consultaUsuarios = await modeloUsuarios.obtenerIdusuario(usuario);
         return consultaUsuarios;
     } catch (error) {
         console.log(error);
@@ -40,7 +40,7 @@ let eliminarUsuario = async (idUsuario) => {                            //Contro
 let inspeccionarUsuario = async(usuario) =>{                           // Controlador que conecta con el metodo insepeccionarUsuario para realizar la validacion de los datos de acceso
     try {
         let usuarioValido = await modeloUsuarios.inspeccionarUsuario(usuario);
-        if (usuarioValido){
+        if (usuarioValido.existe){
             return usuarioValido;
         }else{
             
@@ -171,5 +171,80 @@ let eliminarSolicitudAmistad = async (solicitud_amistad) => {                   
 
 
 
+let crearAmigo = async (ids_amigos) => {                                                                 //Controlador que crea un amigo 
+    try {
+        let solicitud_amistad = {                                                                        //Objeto que contiene la solicitud de amistad  
+            id_usuario: ids_amigos.id_usuario,
+            id_posible_amigo: ids_amigos.id_amigo
+        }
 
-module.exports = { listarUsuarios, crearUsuario, eliminarUsuario, inspeccionarUsuario, generarToken, verificarUsuario, crearPerfil, obtenerPerfil, actualizarPerfil, crearCalificacion, actualizarCalificacion, obtenerCalificaciones, crearSolicitudAmistad, eliminarSolicitudAmistad, obtenerSolicitudesAmistades }
+        let respuesta = await modeloUsuarios.crearAmigo(ids_amigos)                                       //Se crea el registro de amigos mutuamente   
+        let eliminar_solicitud_amistad = await modeloUsuarios.eliminarSolicitudAmistad(solicitud_amistad) // Se elimina la solicitud de amistad asociada despues de crearse el registro de amigos mutuamente
+        
+        return respuesta;
+    } catch (error) {
+        console.log(error);
+        throw new Error(error.message);
+    }
+}
+
+
+let obtenerAmigos = async (ids_amigos) => {                                                                 
+    try {
+
+        let amigos = await modeloUsuarios.obtenerAmigos(id_usuario)                                       
+        return amigos;
+    } catch (error) {
+        console.log(error);
+        throw new Error(error.message);
+    }
+}
+
+let eliminarAmigo = async (ids_amigos) => {                                                                 
+    try {
+
+        let eliminarAmigo = await modeloUsuarios.eliminarAmigo(ids_amigos)                                       
+        return eliminarAmigo;
+    } catch (error) {
+        console.log(error);
+        throw new Error(error.message);
+    }
+}
+
+let crearComentario = async (comentario) => {                                                                 
+    try {
+
+        let respuesta = await modeloUsuarios.crearComentario(comentario)                                       
+        return respuesta;
+    } catch (error) {
+        console.log(error);
+        throw new Error(error.message);
+    }
+}
+
+let obtenerComentarios = async (id_usuario) => {                                                                 
+    try {
+
+        let respuesta = await modeloUsuarios.obtenerComentarios(id_usuario)                                       
+        return respuesta;
+    } catch (error) {
+        console.log(error);
+        throw new Error(error.message);
+    }
+}
+
+let actualizarComentario = async (comentario) => {                                                                 
+    try {
+
+        let respuesta = await modeloUsuarios.actualizarComentario(comentario)                                       
+        return respuesta;
+    } catch (error) {
+        console.log(error);
+        throw new Error(error.message);
+    }
+}
+
+
+
+
+module.exports = { obtenerIdusuario, crearUsuario, eliminarUsuario, inspeccionarUsuario, generarToken, verificarUsuario, crearPerfil, obtenerPerfil, actualizarPerfil, crearCalificacion, actualizarCalificacion, obtenerCalificaciones, crearSolicitudAmistad, eliminarSolicitudAmistad, obtenerSolicitudesAmistades, crearAmigo, obtenerAmigos, eliminarAmigo, crearComentario, obtenerComentarios, actualizarComentario }

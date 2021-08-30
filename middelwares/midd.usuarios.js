@@ -14,10 +14,9 @@ const limiteConsultas = rateLimit({
 })
 
 //Middleware para validaciones de acceso
-let usuarioValido = async (req,res,next) =>{                                    //Metodo para la validacion del usuario mediante el token
+let usuarioValido = async (req, res,next) =>{                                    //Metodo para la validacion del usuario mediante el token
     try {
         if (req.header('authorization')){
-            console.log("Estas en usuarioValido")
             const token = req.header('authorization').split(' ')[1]
             console.log(token)
             let verificado = await controladorUsuarios.verificarUsuario(token);
