@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JSMind/ticket2.git"
+    "url": "git+https://github.com/JSMind/Red-Social-de-Developers-Ticket-2.git"
   },
   "author": "Jair Serralde",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/JSMind/ticket2/issues"
+    "url": "https://github.com/JSMind/Red-Social-de-Developers-Ticket-2/issues"
   },
-  "homepage": "https://github.com/JSMind/ticket2#readme",
+  "homepage": "https://github.com/JSMind/Red-Social-de-Developers-Ticket-2#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "cors": "^2.8.5",

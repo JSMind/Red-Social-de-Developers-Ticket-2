@@ -19,7 +19,7 @@ obtenerComentarios(id_usuario)
 
 
 
-
+console.log(perfil)
 
 
 
